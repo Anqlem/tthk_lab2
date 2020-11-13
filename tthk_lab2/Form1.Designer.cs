@@ -93,7 +93,7 @@
             this._new.Image = ((System.Drawing.Image)(resources.GetObject("_new.Image")));
             this._new.Name = "_new";
             this._new.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this._new.Size = new System.Drawing.Size(180, 22);
+            this._new.Size = new System.Drawing.Size(141, 22);
             this._new.Text = "New";
             this._new.Click += new System.EventHandler(this._new_Click);
             // 
@@ -111,7 +111,7 @@
             this._save.Image = ((System.Drawing.Image)(resources.GetObject("_save.Image")));
             this._save.Name = "_save";
             this._save.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this._save.Size = new System.Drawing.Size(180, 22);
+            this._save.Size = new System.Drawing.Size(141, 22);
             this._save.Text = "Save";
             this._save.Click += new System.EventHandler(this._save_Click);
             // 
@@ -298,7 +298,9 @@
             this.picDrawingSurface.Size = new System.Drawing.Size(946, 481);
             this.picDrawingSurface.TabIndex = 2;
             this.picDrawingSurface.TabStop = false;
-            this.picDrawingSurface.Click += new System.EventHandler(this.picDrawingSurface_Click);
+            this.picDrawingSurface.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picDrawingSurface_MouseDown);
+            this.picDrawingSurface.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picDrawingSurface_MouseMove);
+            this.picDrawingSurface.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picDrawingSurface_MouseUp);
             // 
             // panel1
             // 
