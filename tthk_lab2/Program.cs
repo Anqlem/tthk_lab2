@@ -18,5 +18,9 @@ namespace tthk_lab2
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        static class Data
+        {
+            public static string Value { get; set; }
+        }
     }
 }
