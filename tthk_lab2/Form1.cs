@@ -24,7 +24,7 @@ namespace tthk_lab2
         Color historyColor;
         List<Image> History;
         Form2 newForm;
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -35,19 +35,9 @@ namespace tthk_lab2
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void _new_Click(object sender, EventArgs e)
         {
-            Bitmap pic = new Bitmap(709, 377);
+            Bitmap pic = new Bitmap(946, 481);
             picDrawingSurface.Image = pic;
             picDrawingSurface.BackColor = Color.White;
 
@@ -107,7 +97,7 @@ namespace tthk_lab2
                 oldLocation = e.Location;
                 currentPath = new GraphicsPath();
                 Console.WriteLine(historyColor);
-                currentPen.Color = System.Drawing.Color.White;
+                currentPen.Color = Color.White;
             }
             if (e.Button == MouseButtons.Left)
             {
@@ -156,7 +146,7 @@ namespace tthk_lab2
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Bitmap pic = new Bitmap(709, 377);
+            Bitmap pic = new Bitmap(946, 481);
             picDrawingSurface.Image = pic;
             picDrawingSurface.BackColor = Color.White;
 
@@ -278,6 +268,73 @@ namespace tthk_lab2
             {
                 MessageBox.Show("История пуста");
             }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OP = new OpenFileDialog();
+            OP.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+
+            OP.Title = "Open an Image File"; OP.FilterIndex = 1;
+
+            if (OP.ShowDialog() != DialogResult.Cancel)
+                picDrawingSurface.Load(OP.FileName);
+
+            picDrawingSurface.AutoSize = true;
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog SaveDlg = new SaveFileDialog();
+            SaveDlg.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+            SaveDlg.Title = "Save An Image File";
+            SaveDlg.FilterIndex = 4; //Default format is .PNG
+            SaveDlg.ShowDialog();
+
+            if (SaveDlg.FileName != "") //Если введено не путсое имя
+            {
+                System.IO.FileStream fs = (System.IO.FileStream)SaveDlg.OpenFile();
+
+                switch (SaveDlg.FilterIndex)
+                {
+                    case 1:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Jpeg);
+                        break;
+                    case 2:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Bmp);
+                        break;
+                    case 3:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Gif);
+                        break;
+                    case 4:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Png);
+                        break;
+                }
+                fs.Close();
+            }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void _exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(cValmain);
+            Form2.pictureBox1.BackColor = Form2.colorResult;
+            form2.Show();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help about = new help();
+            about.Show();
         }
     }
 }
