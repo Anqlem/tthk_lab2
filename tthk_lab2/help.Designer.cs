@@ -41,7 +41,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to \r\nMS Paint \r\n(Michael\'s Shmelev Paint)!";
+            this.label1.Text = "Добро пожаловать в\r\nMS Paint \r\n(Michael\'s Shmelev Paint)!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
@@ -58,9 +58,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(48, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 39);
+            this.label3.Size = new System.Drawing.Size(180, 39);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Something useful should be here, \r\nbut not this time.\r\nSorry. :(\r\n";
+            this.label3.Text = "Тут должно быть что то полезное,\r\nно не сейчас.\r\nИзвини. :(\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // help

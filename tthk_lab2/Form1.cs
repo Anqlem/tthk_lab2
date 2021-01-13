@@ -23,7 +23,7 @@ namespace tthk_lab2
         public static Pen currentPen;
         Color historyColor;
         List<Image> History;
-        Form2 newForm;
+        Form2 form2;
 
         public Form1()
         {
@@ -31,7 +31,7 @@ namespace tthk_lab2
             drawing = false;
             currentPen = new Pen(Color.Black);
             History = new List<Image>();
-            newForm = new Form2(cValmain);
+            form2 = new Form2(cValmain);
 
         }
 
@@ -212,9 +212,20 @@ namespace tthk_lab2
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(cValmain);
+            Form2.pictureBox1.BackColor = Form2.colorResult;
+            Console.WriteLine(form2.Visible);
+
+            if (form2.Visible)
+            {
+                form2.Close();
+            }
+
+            form2 = new Form2(cValmain);
             Form2.pictureBox1.BackColor = Form2.colorResult;
             form2.Show();
+
+            Console.WriteLine(form2.Visible);
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -326,9 +337,20 @@ namespace tthk_lab2
 
         private void colorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(cValmain);
+            Form2.pictureBox1.BackColor = Form2.colorResult;
+            Console.WriteLine(form2.Visible);
+
+            if (form2.Visible)
+            {
+                form2.Close();
+            }
+
+            form2 = new Form2(cValmain);
             Form2.pictureBox1.BackColor = Form2.colorResult;
             form2.Show();
+
+            Console.WriteLine(form2.Visible);
+
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
